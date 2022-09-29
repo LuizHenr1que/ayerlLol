@@ -684,7 +684,6 @@ svg:hover {
 /* Dispositivos extra small (telefones em modo retrato, com menos de 576px)*/
 @media (max-width: 575.98px) { 
     .header_container {
-        border: 1px solid blue;
         font-size: .8em;
         gap: 10px;
     }
