@@ -411,16 +411,16 @@ svg:hover {
     height:360px;
 }
 
-#bt{
+.bt{
     position: relative;
     top: 365px;
     left: 160px;
     border: none;
-    background-color: transparent;
+    background: transparent;
 }
 
-#dvSlider svg {
-    fill: var(--yellow-color);
+#dvSlider .bt svg {
+    fill:var(--yellow-color);
     width: 25px;
     padding: 0 5px;
 }
@@ -482,6 +482,8 @@ svg:hover {
     height: 200px;
     display: flex;
     justify-content: center;
+    padding: 10px;
+    align-items: center;
 }
 
 .section_bonus_artigo {
@@ -606,8 +608,7 @@ svg:hover {
 
 /*section oferta*/
 .minha_oferta {
-    display: flex;;
-    flex-direction: column;
+    display: flex;
     align-items: center;
 }
 .container_oferta{

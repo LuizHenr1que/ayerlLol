@@ -189,19 +189,18 @@
 
 
             </div>
-            <div onload="iniciaSlider()">
-
-                <div id="dvSlider" onmouseout="iniciaSlider()">
-
-
-                    <button type="button" value="" id="bt" onclick="troca(-1)"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                            <path d="M25.4 278.6L2.7 256l22.6-22.6 144-144L192 66.7 237.2 112l-22.6 22.6L125.2 224 416 224l32 0 0 64-32 0-290.7 0 89.4 89.4L237.2 400 192 445.3l-22.6-22.6-144-144z" />
-                        </svg> </button>
-                    <button type="button" value="" id="bt" onclick="troca(1)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                            <path d="M422.6 278.6L445.3 256l-22.6-22.6-144-144L256 66.7 210.8 112l22.6 22.6L322.8 224 32 224 0 224l0 64 32 0 290.7 0-89.4 89.4L210.8 400 256 445.3l22.6-22.6 144-144z" />
-                        </svg></button>
-
-                </div>
+            <div id="dvSlider">
+                <!-- Imagem inicial será preenchida dinamicamente pelo JavaScript -->
+                <button class="bt" onclick="troca(-1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                    </svg>
+                </button>
+                <button class="bt" onclick="troca(1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                    </svg>
+                </button>
             </div>
         </section>
 
@@ -415,37 +414,30 @@
 
     <script>
 
-        var slides = new Array("images/BG-Section-Highlights-01.png", "images/BG-Section-Highlights-03.png", "images/BG-Section-Highlights-02.png");
-
+        var slides = ["images/BG-Section-Highlights-01.png", "images/BG-Section-Highlights-03.png", "images/BG-Section-Highlights-02.png"];
         var tam = slides.length;
-        var satual = 1;
+        var satual = 0;
         var tmpSlider;
 
-        function trocaAutomatica() {
-            satual++;
-            if (satual >= tam) {
-                satual = 0;
-            }
+        function exibirSlide() {
             document.getElementById("dvSlider").style.backgroundImage = "url('" + slides[satual] + "')";
+        }
+
+        function troca(dir) {
+            satual = (satual + dir + tam) % tam;
+            exibirSlide();
         }
 
         function iniciaSlider() {
-            document.getElementById("dvSlider").style.backgroundImage = "url('" + slides[satual] + "')";
-            tmpSlider = setInterval(trocaAutomatica, 3000);
+            satual = Math.floor(Math.random() * tam); // Inicia aleatoriamente
+            exibirSlide();
+            tmpSlider = setInterval(function () {
+                satual = Math.floor(Math.random() * tam);
+                exibirSlide();
+            }, 3000); // Alterna aleatoriamente a cada 3 segundos
         }
 
-
-        function troca(dir) {
-            satual += dir;
-            if (satual < 0) {
-                satual = 2;
-            } else if (satual >= tam) {
-                satual = 0;
-            }
-            document.getElementById("dvSlider").style.backgroundImage = "url('" + slides[satual] + "')";
-            clearInterval(tmpSlider);
-            tmpSlider = setInterval(trocaAutomatica, 3000);
-        }
+        iniciaSlider();
     </script>
 </body>
 
