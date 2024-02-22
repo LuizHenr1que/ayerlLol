@@ -43,22 +43,18 @@ table {
 	border-collapse: collapse; 
 	border-spacing: 0; 
 }
-/*Header*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 
 :root {
     --white-color: #fff;
     --yellow-color: #FFF223;
     --blue-color: #020129;
     --black-color: rgb(7, 6, 6);
-    --header-font: 'Roboto', sans-serif;
+    --primary-font: Arial, Helvetica, sans-serif;
 }
 body{
     background-color: #020129;
     background-image: linear-gradient(138deg, #020129 0%, #010c29 100%);
-    
-
-
+    font-family: var(--primary-font);
 }
 header {
     background: url(../images/banner-ayel2.png);
@@ -82,7 +78,6 @@ header {
 .header_container > h1{
     font-weight: 900;
     font-size: 2.3em;
-    font-family: var(--header-font);
     font-style: italic;
     line-height: .9em;
     text-shadow: 0px 0px 40px rgb(0 , 0 0 , 89%);
@@ -94,8 +89,7 @@ header {
 
 p {
     color: var(--white-color);
-    letter-spacing: .1rem;
-    margin-top: 5px;
+    padding-top: 5px;
 }
 .header_button {
     text-transform: uppercase;
@@ -106,7 +100,7 @@ p {
     background-color: var(--yellow-color);
     font-weight: 900;
     font-size: .9em;
-    font-family: var(--header-font);
+    font-family: var(--primary-font);
     transition: all .6s;
 }
 .header_button:hover,
@@ -153,7 +147,7 @@ span {
 #card > h1,
 #card_att > h1,
 #card_bonus > h1 {
-    font-family: var(--header-font);
+    font-family: var(--primary-font);
     font-size: 1.2em;
     font-weight: 900;
     text-align: center;
@@ -162,7 +156,7 @@ span {
 #card > p,
 #card_att > p,
 #card_bonus > p {
-    font-family: var(--header-font);
+    font-family: var(--primary-font);
     font-size: small;
     line-height: 20px;
     text-align: center;
@@ -236,7 +230,7 @@ svg:hover {
 .container_artigo > h1 {
     font-weight: 800;
     font-size: 1.5em;
-    font-family: var(--header-font);
+    font-family: var(--primary-font);
     font-style: italic;
     padding-bottom: 15px;
 }
@@ -258,13 +252,12 @@ svg:hover {
 .section_campeao_artigo > h1,
 .container_conquistas_conteudo > h1 {
     font-weight: 900;
-    font-family: var(--header-font);
+    font-family: var(--primary-font);
     font-style: italic;
 }
 
 .h1_titulo{ /************/
-    font-weight: 900;
-    font-family: var(--header-font);
+    font-family: var(--primary-font);
     font-style: italic;
     font-size: 2em;
     text-align: center;
@@ -278,7 +271,7 @@ svg:hover {
 }
 
 .modulos_paragrafo {
-    font-family: var(--header-font);
+    font-family: var(--primary-font);
     font-size: small;
 }
 
@@ -359,7 +352,7 @@ svg:hover {
     color: var(--black-color);
     padding-top: 5px;
     font-weight: 900;
-    font-family: var(--header-font);
+    font-family: var(--primary-font);
 }
 
 
@@ -499,7 +492,7 @@ svg:hover {
 
 .section_bonus_artigo > h1 {
     font-weight: 900;
-    font-family: var(--header-font);
+    font-family: var(--primary-font);
     font-style: italic;
     font-size: 1.9em;
     color: var(--yellow-color);
@@ -660,7 +653,7 @@ svg:hover {
     color: var(--yellow-color);
     font-weight: 900;
     font-size: large;
-    font-family: var(--header-font);
+    font-family: var(--primary-font);
     transition: all .6s;
 }
 .preco svg{
